@@ -1,0 +1,71 @@
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/Cosmo/bootstrap.min.css">
+
+  <style>
+    body {
+      padding-top: 70px;
+      background-color: #ded2c4; 
+      color: #2e2a2a; 
+    }
+   
+    .container {
+      background-color: transparent !important;
+    }
+   
+    .table {
+      background-color: transparent !important;
+    }
+   
+    nav.navbar {
+      background-color: #1c1e22;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Sakila Database</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index">Login</a></li>
+        {% if session.customer_name %}
+          <li class="nav-item"><a class="nav-link" href="user_info">User Information</a></li>
+          <li class="nav-item"><a class="nav-link" href="browse_db">Explore DB</a></li>
+        {% endif %}
+      </ul>
+      <ul class="navbar-nav">
+        {% if session.customer_name %}
+          <li class="nav-item"><a class="nav-link" href="#">Customer: {{ session.customer_name[1:] }}</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  {% endfor %}
+
+  {% block content %}{% endblock %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

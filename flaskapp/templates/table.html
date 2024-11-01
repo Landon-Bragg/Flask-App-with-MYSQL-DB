@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Table: {{ table }}{% endblock %}
+
+{% block content %}
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  th {
+    background-color: #dddddd;
+  }
+</style>
+
+<a href="{{ url_for('browse_db') }}">Back to table list</a>
+<h1>{{ table }} Data</h1>
+<table>
+  <tr>
+    {% for column in columns %}
+    <th>
+      <a href="{{ url_for('table', table=table, sort_by=column, order='asc' if sort_by != column or order == 'desc' else 'desc') }}">{{ column }}</a>
+      {% if sort_by == column %}
+      {% if order == 'asc' %}
+      <span>&uarr;</span>
+      {% else %}
+      <span>&darr;</span>
+      {% endif %}
+      {% endif %}
+    </th>
+    {% endfor %}
+  </tr>
+  {% for row in rows %}
+  <tr>
+    {% for cell in row %}
+    <td>{{ cell }}</td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+</table>
+<a href="{{ url_for('browse_db') }}">Back to table list</a>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}User Information{% endblock %}
+
+{% block content %}
+<h1>User Information</h1>
+<table class="table">
+  <tr>
+    <th>Customer ID</th>
+    <td>{{ customer[1] }}</td>
+  </tr>
+  <tr>
+    <th>First Name</th>
+    <td>{{ customer[2] }}</td>
+  </tr>
+  <tr>
+    <th>Last Name</th>
+    <td>{{ customer[3] }}</td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td>{{ customer[4] }}</td>
+  </tr>
+  <tr>
+    <th>Amount of Movies Rented All time</th>
+    <td>{{ customer[5] }}</td>
+  </tr>
+  <tr>
+    <th>Active User = 1, Inactive = 0</th>
+    <td>{{ customer[6] }}</td>
+  </tr>
+  <tr>
+    <th>Rental Date</th>
+    <td>{{ customer[7] }}</td>
+  </tr>
+  <tr>
+    <th>Return Date</th>
+    <td>{{ customer[8] }}</td>
+  </tr>
+
+  <!-- Add more rows for additional customer information as needed -->
+</table>
+{% endblock %}

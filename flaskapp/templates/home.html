@@ -1,0 +1,82 @@
+<!-- about.html -->
+
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="text-center mb-4">About My Web App</h1>
+  <p>
+    This Flask web app allows customers of the movie rental service to access the full
+    records of their own rental history. Additionally, users are able to analyze movies
+    that they are interested in renting. They can get a better understanding of movies 
+    they might choose to rent. This web app can also be useful for managerial staff
+    who want to see their most loyal customers and the seasonality and trends of rental
+    data at their stores.
+    It was developed by Landon Bragg, Zak Khan, Ben Kim, and Conner Stallman.
+  </p>
+  <h2>Contributors and Roles</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Contributor</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Landon Bragg</td>
+        <td>Backend Coder</td>
+      </tr>
+      <tr>
+        <td>Zak Khan</td>
+        <td>Database Developer</td>
+      </tr>
+      <tr>
+        <td>Ben Kim</td>
+        <td>Frontend Developer</td>
+      </tr>
+      <tr>
+        <td>Conner Stallman</td>
+        <td>Frontend Developer</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Completed Tasks</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Contributor(s)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Implemented user authentication</td>
+        <td>Landon Bragg and Ben Kim</td>
+      </tr>
+      <tr>
+        <td>Designed frontend interface</td>
+        <td>Conner Stallman and Ben Kim</td>
+      </tr>
+      <tr>
+        <td>Databases</td>
+        <td>Zak Khan</td>
+      </tr>
+      <tr>
+        <td>Developed Interactive User Interface</td>
+        <td>Landon Bragg and Conner Stallman</td>
+      </tr>
+      <tr>
+        <td>Implemented Sorting Feature</td>
+        <td>Zak Khan</td>
+      </tr>
+      <tr>
+        <td>Troubleshooting and Debugging</td>
+        <td>Everyone</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}
