@@ -21,32 +21,32 @@ pip (Python package installer)
 ## Setup Steps
 Clone the Repository:
 
-`bash
-  git clone git@github.com:Landon-Bragg/Flask-App-with-MYSQL-DB.git
-  cd Flask-App-with-MYSQL-DB`
+bash
+`git clone git@github.com:Landon-Bragg/Flask-App-with-MYSQL-DB.git
+cd Flask-App-with-MYSQL-DB`
 
 ## Set Up a Virtual Environment (optional, but recommended):
 
-`bash
-python3 -m venv venv
+bash
+`python3 -m venv venv
 source venv/bin/activate`
 
 Install Required Packages:
 
-`bash
-pip install -r requirements.txt
+bash
+`pip install -r requirements.txt
 Configure MySQL Database:`
 
 ## Create a MySQL database for the app.
 Update the database connection information in the application (typically in a config file or within index.py).
 Run Database Migrations: This application may include SQL scripts for setting up tables. Run these to initialize the database:
 
-`bash
-mysql -u username -p database_name < path/to/sql_script.sql
+bash
+`mysql -u username -p database_name < path/to/sql_script.sql
 Run the Application:`
 
-`bash
-flask run
+bash
+`flask run
 The app will be accessible at http://127.0.0.1:5000.`
 
 ## Usage
